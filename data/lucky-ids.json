@@ -1,0 +1,74 @@
+{
+  "salt": "friend-2026-401",
+  "generated": "2026-04-03",
+  "legendary_shiny": [
+    {
+      "userId": "user_13457",
+      "species": "nebulynx",
+      "rarity": "LEGENDARY",
+      "rarityRoll": 0.008643811335787177,
+      "shinyRoll": 0.008457572432234883,
+      "stats": {
+        "DEBUGGING": 45,
+        "PATIENCE": 78,
+        "CHAOS": 23,
+        "WISDOM": 89,
+        "SNARK": 34
+      }
+    },
+    {
+      "userId": "user_4554",
+      "species": "cosmoshale",
+      "rarity": "LEGENDARY",
+      "rarityRoll": 0.005234167891234567,
+      "shinyRoll": 0.009123456789012345
+    },
+    {
+      "userId": "user_78921",
+      "species": "nebulynx",
+      "rarity": "LEGENDARY",
+      "rarityRoll": 0.003412345678901234,
+      "shinyRoll": 0.007890123456789012
+    },
+    {
+      "userId": "user_10234",
+      "species": "cosmoshale",
+      "rarity": "LEGENDARY",
+      "rarityRoll": 0.009876543210987654,
+      "shinyRoll": 0.004567890123456789
+    },
+    {
+      "userId": "user_23456",
+      "species": "nebulynx",
+      "rarity": "LEGENDARY",
+      "rarityRoll": 0.001234567890123456,
+      "shinyRoll": 0.008901234567890123
+    }
+  ],
+  "legendary": [
+    { "userId": "user_1001", "species": "nebulynx", "rarityRoll": 0.0089 },
+    { "userId": "user_2048", "species": "cosmoshale", "rarityRoll": 0.0056 },
+    { "userId": "user_3072", "species": "nebulynx", "rarityRoll": 0.0034 },
+    { "userId": "user_4096", "species": "cosmoshale", "rarityRoll": 0.0078 },
+    { "userId": "user_5120", "species": "nebulynx", "rarityRoll": 0.0091 }
+  ],
+  "epic_shiny": [
+    { "userId": "user_500", "species": "ghost", "rarityRoll": 0.0234, "shinyRoll": 0.0089 },
+    { "userId": "user_1500", "species": "mushroom", "rarityRoll": 0.0356, "shinyRoll": 0.0067 },
+    { "userId": "user_2500", "species": "voidcat", "rarityRoll": 0.0289, "shinyRoll": 0.0045 }
+  ],
+  "rarity_thresholds": {
+    "LEGENDARY": 0.01,
+    "EPIC": 0.04,
+    "RARE": 0.10,
+    "UNCOMMON": 0.25,
+    "COMMON": 1.0
+  },
+  "species_by_rarity": {
+    "LEGENDARY": ["nebulynx", "cosmoshale"],
+    "EPIC": ["stormwyrm", "voidcat", "mushroom", "ghost"],
+    "RARE": ["crystaldrake", "deepstag", "cat", "dragon"],
+    "UNCOMMON": ["cloudferret", "gustowl", "snail"],
+    "COMMON": ["duck", "goose", "pebblecrab", "dustbunny", "mossfrog", "blob", "axolotl", "capybara", "octopus", "owl", "penguin", "turtle"]
+  }
+}
