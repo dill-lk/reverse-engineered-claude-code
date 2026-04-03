@@ -2,7 +2,25 @@
 
 **Get the RAREST Shiny Legendary Buddy in Claude Code!**
 
-This repository contains findings from reverse-engineering Claude Code's hidden buddy/pet system, along with scripts to find lucky userIDs and rewrite your config to get the rarest possible buddy.
+---
+
+## 🎯 Tested & Working IDs
+
+### ✅ Best Found So Far (Tested in Claude Code v2.1.91)
+
+| UserID | Result | Rarity | Species |
+|--------|--------|--------|---------|
+| **`user_39645`** | ★★★★ EPIC GHOST | **Epic** | Ghost |
+| `user_13457` | ★★ UNCOMMON CHONK | Uncommon | Cat |
+| `7hu6BP9cozc8PPsxQbRCBp8bMnC7NPMPogojj3TEpump` | ★★ UNCOMMON GOOSE | Uncommon | Goose |
+| `user_101556` | ★ COMMON DRAGON | Common | Dragon |
+| `0000000000000000000000000000000000000000000000000000000000000001` | ★ COMMON DUCK | Common | Duck |
+
+### 🔥 Top Recommendation
+
+**Try `user_39645`** - This is the best result found so far with **★★★★ EPIC GHOST** named "Crumpet"!
+
+---
 
 ## 📋 Table of Contents
 
@@ -13,7 +31,8 @@ This repository contains findings from reverse-engineering Claude Code's hidden 
 - [How to Get the Rarest Buddy](#-how-to-get-the-rarest-buddy)
 - [Quick Start](#-quick-start)
 - [Scripts](#-scripts)
-- [Pre-Calculated Lucky IDs](#-pre-calculated-lucky-ids)
+- [Calculated IDs](#-calculated-ids)
+- [Advanced: Finding Legendary IDs](#-advanced-finding-legendary-ids)
 
 ---
 
@@ -121,7 +140,7 @@ const SALT = "friend-2026-401";
 
 ### Step-by-Step
 
-1. **Find a Lucky userID** (use our scripts or pre-calculated list below)
+1. **Find a Lucky userID** (use our scripts or tested list above)
 
 2. **Edit your config**:
    ```bash
@@ -134,7 +153,7 @@ const SALT = "friend-2026-401";
 
 3. **Change userID**:
    ```json
-   "userID": "user_13457"
+   "userID": "user_39645"
    ```
 
 4. **DELETE the companion block** (to force fresh hatch):
@@ -190,7 +209,7 @@ node find-legendary-shiny.js find
 node find-legendary-shiny.js species nebulynx
 
 # Test a userID
-node find-legendary-shiny.js test user_13457
+node find-legendary-shiny.js test user_39645
 ```
 
 ### `rewrite-config.js`
@@ -204,7 +223,7 @@ node rewrite-config.js
 node rewrite-config.js nebulynx
 
 # Use specific userID
-node rewrite-config.js user_13457
+node rewrite-config.js user_39645
 
 # Unlock config for editing
 node rewrite-config.js --unlock
@@ -215,25 +234,9 @@ Quick scripts for Mac/Linux and Windows.
 
 ---
 
-## 🎯 Tested & Working IDs
+## 📊 Calculated IDs
 
-### ✅ Best Found So Far (Tested in Claude Code v2.1.91)
-
-| UserID | Result | Rarity | Species |
-|--------|--------|--------|---------|
-| **`user_39645`** | ★★★★ EPIC GHOST | Epic | Ghost |
-| `user_13457` | ★★ UNCOMMON CHONK | Uncommon | Cat |
-| `7hu6BP9cozc8PPsxQbRCBp8bMnC7NPMPogojj3TEpump` | ★★ UNCOMMON GOOSE | Uncommon | Goose |
-| `user_101556` | ★ COMMON DRAGON | Common | Dragon |
-| `0000000000000000000000000000000000000000000000000000000000000001` | ★ COMMON DUCK | Common | Duck |
-
-### 🔥 Top Recommendation
-
-**Try `user_39645`** - This is the best result found so far with **★★★★ EPIC GHOST** named "Crumpet"!
-
-### 📊 Calculated IDs (Not Yet Tested)
-
-These IDs are mathematically calculated to roll Legendary Shiny:
+These IDs are mathematically calculated to roll Legendary Shiny (not yet tested):
 
 | UserID | Calculated Species | Rarity Roll | Shiny Roll |
 |--------|-------------------|-------------|------------|
@@ -242,6 +245,44 @@ These IDs are mathematically calculated to roll Legendary Shiny:
 | `user_78921` | Nebulynx | 0.00341 | 0.00789 |
 
 > ⚠️ **Note**: Calculated IDs may not match actual results. Your version of Claude Code may use a different salt or algorithm. Test and report your findings!
+
+---
+
+## 🔬 Advanced: Finding Legendary IDs
+
+### Observed Pattern
+Based on testing, higher userID numbers may yield better results:
+- `user_39645` → Epic (BEST)
+- `user_13457` → Uncommon
+- `user_101556` → Common (worse!)
+
+### Quick Search Script
+Search in the 40000-60000 range for better results:
+
+```bash
+node -e "
+const crypto = require('crypto');
+function mulberry32(seed) {
+    return function() {
+        seed |= 0; seed = seed + 0x6D2B79F5 | 0;
+        var t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+        t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+        return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    }
+}
+console.log('Searching for Legendary Shiny IDs (40000-60000)...');
+for (let i = 40000; i < 60000; i++) {
+    let hash = crypto.createHash('sha256').update('user_' + i + 'friend-2026-401').digest('hex');
+    let seed = parseInt(hash.substring(0, 8), 16);
+    let rng = mulberry32(seed);
+    let r = rng(), s = rng();
+    if (r < 0.01 && s < 0.01) {
+        console.log('🌟 LEGENDARY SHINY: user_' + i);
+        console.log('   Rarity: ' + r.toFixed(6) + ' | Shiny: ' + s.toFixed(6));
+    }
+}
+"
+```
 
 ---
 

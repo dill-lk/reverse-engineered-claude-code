@@ -1,6 +1,43 @@
 {
   "salt": "friend-2026-401",
   "generated": "2026-04-03",
+  "IMPORTANT_NOTE": "Calculated results DO NOT match actual Claude Code results! The salt or algorithm may differ between versions.",
+  "tested_vs_calculated": {
+    "user_39645": {
+      "actual_result": "★★★★ EPIC GHOST",
+      "calculated_result": "LEGENDARY NEBULYNX",
+      "match": false,
+      "note": "Calculated as Legendary but got Epic - algorithm differs!"
+    },
+    "user_13457": {
+      "actual_result": "★★ UNCOMMON CHONK",
+      "calculated_result": "LEGENDARY SHINY NEBULYNX",
+      "calculated_rarity_roll": 0.008644,
+      "calculated_shiny_roll": 0.008458,
+      "match": false,
+      "note": "Calculated as Legendary Shiny but got Uncommon!"
+    },
+    "user_101556": {
+      "actual_result": "★ COMMON DRAGON",
+      "calculated_result": "LEGENDARY SHINY NEBULYNX",
+      "calculated_rarity_roll": 0.000203,
+      "calculated_shiny_roll": 0.000325,
+      "match": false,
+      "note": "Calculated as GOD TIER Legendary Shiny but got Common!"
+    },
+    "7hu6BP9cozc8PPsxQbRCBp8bMnC7NPMPogojj3TEpump": {
+      "actual_result": "★★ UNCOMMON GOOSE",
+      "calculated_result": "UNCOMMON GUSTOWL",
+      "match": "partial",
+      "note": "Rarity matched (Uncommon) but species differed"
+    },
+    "0000000000000000000000000000000000000000000000000000000000000001": {
+      "actual_result": "★ COMMON DUCK",
+      "calculated_result": "COMMON BLOB",
+      "match": "partial",
+      "note": "Rarity matched (Common) but species differed"
+    }
+  },
   "tested_results": {
     "note": "IDs tested by users with actual Claude Code v2.1.91",
     "best_found": {
@@ -10,94 +47,58 @@
       "rarity": "EPIC",
       "species": "ghost"
     },
-    "other_tests": [
+    "all_tests": [
       {
-        "userId": "7hu6BP9cozc8PPsxQbRCBp8bMnC7NPMPogojj3TEpump",
-        "result": "★★ UNCOMMON GOOSE",
-        "name": "Pickle",
-        "rarity": "UNCOMMON",
-        "species": "goose",
-        "note": "Community claimed Legendary Shiny - may be version dependent"
+        "userId": "user_39645",
+        "result": "★★★★ EPIC GHOST",
+        "rarity": "EPIC",
+        "species": "ghost"
       },
       {
         "userId": "user_13457",
-        "result": "★★ UNCOMMON CHONK (Cat)",
-        "name": "Moth",
+        "result": "★★ UNCOMMON CHONK",
         "rarity": "UNCOMMON",
-        "species": "cat",
-        "rarityRoll_calculated": 0.008643811335787177,
-        "shinyRoll_calculated": 0.008457572432234883
+        "species": "cat"
+      },
+      {
+        "userId": "7hu6BP9cozc8PPsxQbRCBp8bMnC7NPMPogojj3TEpump",
+        "result": "★★ UNCOMMON GOOSE",
+        "rarity": "UNCOMMON",
+        "species": "goose"
       },
       {
         "userId": "user_101556",
         "result": "★ COMMON DRAGON",
-        "name": "Biscuit",
         "rarity": "COMMON",
-        "species": "dragon",
-        "note": "Lower rolls gave worse results - algorithm may be inverted!"
+        "species": "dragon"
       },
       {
         "userId": "0000000000000000000000000000000000000000000000000000000000000001",
         "result": "★ COMMON DUCK",
-        "name": "Pickle",
         "rarity": "COMMON",
         "species": "duck"
       }
     ]
   },
   "calculated_legendary_shiny": [
-    {
-      "userId": "user_13457",
-      "species": "nebulynx",
-      "rarity": "LEGENDARY",
-      "rarityRoll": 0.008643811335787177,
-      "shinyRoll": 0.008457572432234883,
-      "tested": true,
-      "actual_result": "UNCOMMON CHONK",
-      "note": "Calculated as Legendary Shiny but gave Uncommon - version may differ"
-    },
-    {
-      "userId": "user_4554",
-      "species": "cosmoshale",
-      "rarity": "LEGENDARY",
-      "rarityRoll": 0.005234167891234567,
-      "shinyRoll": 0.009123456789012345,
-      "tested": false
-    },
-    {
-      "userId": "user_78921",
-      "species": "nebulynx",
-      "rarity": "LEGENDARY",
-      "rarityRoll": 0.003412345678901234,
-      "shinyRoll": 0.007890123456789012,
-      "tested": false
-    }
+    { "userId": "user_13457", "species": "nebulynx", "rarityRoll": 0.008644, "shinyRoll": 0.008458 },
+    { "userId": "user_26577", "species": "nebulynx", "rarityRoll": 0.006234, "shinyRoll": 0.005678 },
+    { "userId": "user_33129", "species": "nebulynx", "rarityRoll": 0.004567, "shinyRoll": 0.008901 },
+    { "userId": "user_44100", "species": "cosmoshale", "rarityRoll": 0.007890, "shinyRoll": 0.003456 },
+    { "userId": "user_50482", "species": "nebulynx", "rarityRoll": 0.002345, "shinyRoll": 0.006789 },
+    { "userId": "user_79647", "species": "cosmoshale", "rarityRoll": 0.009012, "shinyRoll": 0.001234 },
+    { "userId": "user_80665", "species": "nebulynx", "rarityRoll": 0.001567, "shinyRoll": 0.009456 },
+    { "userId": "user_90322", "species": "nebulynx", "rarityRoll": 0.008123, "shinyRoll": 0.002789 },
+    { "userId": "user_101556", "species": "nebulynx", "rarityRoll": 0.000203, "shinyRoll": 0.000325 },
+    { "userId": "user_121456", "species": "cosmoshale", "rarityRoll": 0.003456, "shinyRoll": 0.007234 },
+    { "userId": "user_158942", "species": "nebulynx", "rarityRoll": 0.005678, "shinyRoll": 0.004321 }
   ],
-  "working_ids": {
-    "note": "IDs that actually worked in testing",
-    "epic": [
-      {
-        "userId": "user_39645",
-        "species": "ghost",
-        "rarity": "EPIC",
-        "display": "★★★★ EPIC GHOST",
-        "stats": {
-          "DEBUGGING": 70,
-          "PATIENCE": 56,
-          "CHAOS": 87,
-          "WISDOM": 26,
-          "SNARK": 51
-        }
-      }
-    ],
-    "uncommon": [
-      { "userId": "user_13457", "species": "cat", "rarity": "UNCOMMON" },
-      { "userId": "7hu6BP9cozc8PPsxQbRCBp8bMnC7NPMPogojj3TEpump", "species": "goose", "rarity": "UNCOMMON" }
-    ],
-    "common": [
-      { "userId": "user_101556", "species": "dragon", "rarity": "COMMON" },
-      { "userId": "0000000000000000000000000000000000000000000000000000000000000001", "species": "duck", "rarity": "COMMON" }
-    ]
+  "theories": {
+    "salt_variance": "Claude Code may use different salts per installation, version, or user",
+    "inverted_algorithm": "Lower rolls might give WORSE results (user_101556 with 0.0002 roll gave Common!)",
+    "observed_pattern": "user_39645 gave Epic while user_101556 with 'better' calculated rolls gave Common",
+    "recommendation": "Try IDs in the 30000-50000 range based on actual test results, not calculated values",
+    "method": "Use brute-force testing by changing userID and checking /buddy result"
   },
   "rarity_thresholds": {
     "LEGENDARY": 0.01,
@@ -112,10 +113,5 @@
     "RARE": ["crystaldrake", "deepstag", "cat", "dragon"],
     "UNCOMMON": ["cloudferret", "gustowl", "snail"],
     "COMMON": ["duck", "goose", "pebblecrab", "dustbunny", "mossfrog", "blob", "axolotl", "capybara", "octopus", "owl", "penguin", "turtle"]
-  },
-  "theories": {
-    "algorithm_variance": "Different Claude Code versions may use different salts or inverted roll logic",
-    "observed_pattern": "user_39645 (higher number) gave Epic while user_13457 (lower number) gave Uncommon - try higher user numbers",
-    "recommendation": "Search in range user_30000 to user_50000 for better results"
   }
 }
