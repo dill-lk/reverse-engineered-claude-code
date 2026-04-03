@@ -215,18 +215,33 @@ Quick scripts for Mac/Linux and Windows.
 
 ---
 
-## 🎯 Pre-Calculated Lucky IDs
+## 🎯 Tested & Working IDs
 
-These IDs have been calculated to roll Legendary Shiny with the default salt `friend-2026-401`:
+### ✅ Best Found So Far (Tested in Claude Code v2.1.91)
 
-| UserID | Species | Rarity Roll | Shiny Roll |
-|--------|---------|-------------|------------|
+| UserID | Result | Rarity | Species |
+|--------|--------|--------|---------|
+| **`user_39645`** | ★★★★ EPIC GHOST | Epic | Ghost |
+| `user_13457` | ★★ UNCOMMON CHONK | Uncommon | Cat |
+| `7hu6BP9cozc8PPsxQbRCBp8bMnC7NPMPogojj3TEpump` | ★★ UNCOMMON GOOSE | Uncommon | Goose |
+| `user_101556` | ★ COMMON DRAGON | Common | Dragon |
+| `0000000000000000000000000000000000000000000000000000000000000001` | ★ COMMON DUCK | Common | Duck |
+
+### 🔥 Top Recommendation
+
+**Try `user_39645`** - This is the best result found so far with **★★★★ EPIC GHOST** named "Crumpet"!
+
+### 📊 Calculated IDs (Not Yet Tested)
+
+These IDs are mathematically calculated to roll Legendary Shiny:
+
+| UserID | Calculated Species | Rarity Roll | Shiny Roll |
+|--------|-------------------|-------------|------------|
 | `user_13457` | Nebulynx | 0.00864 | 0.00846 |
 | `user_4554` | Cosmoshale | 0.00523 | 0.00912 |
 | `user_78921` | Nebulynx | 0.00341 | 0.00789 |
-| `user_10234` | Cosmoshale | 0.00987 | 0.00456 |
 
-> ⚠️ **Note**: Your version of Claude Code may use a different salt or algorithm. If these don't work, run the finder script to generate IDs for your specific setup.
+> ⚠️ **Note**: Calculated IDs may not match actual results. Your version of Claude Code may use a different salt or algorithm. Test and report your findings!
 
 ---
 
