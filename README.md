@@ -357,5 +357,6 @@ MIT License - Use freely, credit appreciated.
 ---
 
 **Made with 💜 by the Claude Code community**
+@dill-lk
 
 *Remember: The rarest buddy is the one that helps you ship code! 🚀*
